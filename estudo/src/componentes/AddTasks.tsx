@@ -1,6 +1,6 @@
 function AddTask() {
     return (
-        <div className="adicionar-tarefa">
+        <div >
             <h1>Adicionar Tarefa</h1>
         </div>
     )
