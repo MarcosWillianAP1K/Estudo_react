@@ -15,7 +15,20 @@ const [tasks, setTasks] = useState([
   { id: 1, title: 'Tarefa 1', completed: false },
   { id: 2, title: 'Tarefa 2', completed: false },
   { id: 3, title: 'Tarefa 3', completed: false },
-])
+])  
+
+
+function onClick_task(task_ID: number) {
+  const newtask = tasks.map((task) => {
+
+    if (task.id === task_ID) {
+      return { ...task, completed: !task.completed }
+    }
+
+    return task
+  })
+  setTasks(newtask)
+}
 
   return (
     <>
@@ -25,7 +38,7 @@ const [tasks, setTasks] = useState([
           <h1 className='text-3xl text-center text-slate-200 font-bold'>
             Gerenciador de tarefas
           </h1>
-          <Task tasks={tasks}/>
+          <Task tasks={tasks} onClick_task={onClick_task} />
 
         </div>
         
